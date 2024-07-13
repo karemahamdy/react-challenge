@@ -107,13 +107,6 @@ function Pizza({pizzaObj}) {
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-
-        {/* {pizzaObj.soldOut ? (
-          <span>SOLD OUT</span>
-        ) : (
-          <span>{pizzaObj.price}</span>
-        )} */}
-
         <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </li>
@@ -130,7 +123,13 @@ function Footer() {
     <>
       <footer className="footer">
         {isOpen ? (
-          <p>hello closeHour={closeHour} openHour={openHour} </p>
+        <div className="order">
+        <p>
+          We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
+          online.
+        </p>
+        <button className="btn">Order</button>
+      </div>
         ): (
           <p>
             We're happy to welcome you between {openHour}:00 and {closeHour}:00.
